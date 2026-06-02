@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: #111;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* =======================
+   CONTAINER
+======================= */
+
+.catalogo-container {
+  max-width: 1700px;
+  margin: auto;
+  padding: 50px;
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.catalog-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.catalog-brand {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 18px;
+}
+
+.catalog-header h1 {
+  font-size: 64px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.catalog-count {
+  color: #777;
+  font-size: 14px;
+}
+
+/* =======================
+   SEARCH
+======================= */
+
+.catalog-search {
+  max-width: 500px;
+  margin: 0 auto 60px;
+}
+
+.catalog-search input {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-size: 15px;
+  text-align: center;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.catalog-search input:focus {
+  border-color: #111;
+}
+
+/* =======================
+   GRID
+======================= */
+
+.perfumes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px 25px;
+}
+
+/* =======================
+   CARD
+======================= */
+
+.perfume-card {
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp 0.7s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.perfume-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.img-container {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease, filter 0.5s ease;
+}
+
+.perfume-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.95);
+}
+
+/* =======================
+   INFO
+======================= */
+
+.perfume-info {
+  padding-top: 18px;
+}
+
+/* 🔥 HOVER PREMIUM SUBRAYADO SUAVE */
+.perfume-info h3 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #111;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* línea animada elegante */
+.perfume-info h3::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  width: 0%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.perfume-info h3:hover::after {
+  width: 70%;
+}
+
+/* =======================
+   PAGINATION
+======================= */
+
+.pagination {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.pagination button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #111;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* =======================
+   TABLET
+======================= */
+
+@media (max-width: 1200px) {
+  .perfumes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .catalog-header h1 {
+    font-size: 52px;
+  }
+}
+
+/* =======================
+   MOBILE
+======================= */
+
+@media (max-width: 768px) {
+  .catalogo-container {
+    padding: 20px;
+  }
+
+  .catalog-header {
+    margin-bottom: 35px;
+  }
+
+  .catalog-header h1 {
+    font-size: 40px;
+  }
+
+  .perfumes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 14px;
+  }
+
+  .perfume-info h3 {
+    font-size: 16px;
+  }
+
+  .catalog-search {
+    margin-bottom: 35px;
+  }
+}
+
+/* =======================
+   SMALL MOBILE
+======================= */
+
+@media (max-width: 430px) {
+  .catalog-header h1 {
+    font-size: 32px;
+  }
+
+  .catalog-brand {
+    font-size: 10px;
+  }
+
+  .catalog-count {
+    font-size: 12px;
+  }
+
+  .perfume-info h3 {
+    font-size: 14px;
+  }
+}
