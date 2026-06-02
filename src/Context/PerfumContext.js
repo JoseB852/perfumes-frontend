@@ -22,6 +22,7 @@ export const PerfumProvider = ({ children }) => {
 
       const res = await fetch(
         `${API_URL}/productos?page=${pageNumber}&limit=24`
+        
       );
 
       if (!res.ok) {

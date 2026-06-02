@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./view/Home/Home";
-import { PrefumProvider } from "./Context/PerfumContext";
+import { PerfumProvider } from "./Context/PerfumContext";
 import ClickSpark from "./components/ClickSpark/ClickSpark";
 
 function App() {
   return (
-    <PrefumProvider>
+    <PerfumProvider>
       <BrowserRouter>
 
         <ClickSpark
@@ -22,7 +22,7 @@ function App() {
         </ClickSpark>
 
       </BrowserRouter>
-    </PrefumProvider>
+    </PerfumProvider>
   );
 }
 
