@@ -2,9 +2,13 @@ import React, { createContext, useEffect, useState } from "react";
 
 export const PerfumContext = createContext();
 
-const API_URL = "https://perfumes-backend-5hp9.onrender.com/api";
+// 🔥 Recomendado para producción (Vercel env var)
+// const API_URL = import.meta.env.VITE_API_URL;
 
-export const PrefumProvider = ({ children }) => {
+// 🔥 Si no usas env todavía, usa tu backend directo:
+const API_URL = "https://perfumes-backend-pm8l.onrender.com/api";
+
+export const PerfumProvider = ({ children }) => {
   const [perfumes, setPerfumes] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);

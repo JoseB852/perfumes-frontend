@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { PrefumProvider } from './Context/PerfumContext';
+import { PerfumProvider } from './Context/PerfumContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <PrefumProvider>
+  <PerfumProvider>
     <App />
-  </PrefumProvider>
+  </PerfumProvider>
 </React.StrictMode>
 );
 
